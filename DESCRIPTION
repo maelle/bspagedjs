@@ -1,0 +1,19 @@
+Package: bspagedjs
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Maëlle",
+           family = "Salmon",
+           role = c("cre", "aut"),
+           email = "msmaellesalmon@gmail.com",
+           comment = c(ORCID = "0000-0002-2815-0399"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1.9000
+Suggests: 
+    bookdown (>= 0.21.3)
+Remotes:  
+    rstudio/bookdown
