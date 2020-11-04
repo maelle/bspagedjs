@@ -15,5 +15,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9000
 Suggests: 
     bookdown (>= 0.21.3)
-Remotes:  
+Remotes: 
     rstudio/bookdown
+URL: https://github.com/maelle/bspagedjs
+BugReports: https://github.com/maelle/bspagedjs/issues
