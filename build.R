@@ -69,6 +69,8 @@ xml2::xml_attr(toc_links, "href") <- paste0(
     xml2::xml_attr(toc_links, "href")
   )
 )
+# fix first anchor
+xml2::xml_attr(toc_links[1], "href") <- xml2::xml_attr(xml2::xml_find_first(page1, ".//a[@class='anchor']"), "href")
 
 for (i in rev(xml2::xml_contents(toc))) {
 
