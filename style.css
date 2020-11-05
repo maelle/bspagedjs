@@ -3,11 +3,31 @@
     display: none;
 }
 
+.chapter-nav {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+.book-extra a::after {
+  content: " (" attr(href) ")";
+}
+
+.book-extra {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 0.5rem;
+}
+
+
 main img {
   max-width: 100%;
   max-height: calc(0.5 * (var(--pagedjs-width) - var(--pagedjs-margin-left) - var(--pagedjs-margin-right)));
   width: auto;
 }
+
+
 
 @page {
   @bottom-left {
@@ -28,8 +48,5 @@ main img {
   display: none;
 }
 
-.footer {
-  display: none;
-}
 
 }

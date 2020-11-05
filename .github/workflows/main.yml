@@ -22,15 +22,13 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ hashFiles('DESCRIPTION') }}
+          key: ${{ hashFiles('DESCRIPTION') }}-2
 
       - name: Install dependencies
         run: Rscript -e 'install.packages("remotes")' -e 'options(install.packages.check.source = "both")' -e 'remotes::install_deps(dependencies = TRUE)'
 
       - name: Render book html
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
-        env: # Set the secret as an input
-          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
 
       - uses: actions/setup-node@v1
 

@@ -6,6 +6,11 @@ tweak_page <- function(page_path) {
   # put TOC at the begging
   page <- xml2::read_html(page_path)
   page_toc <- xml2::xml_find_first(page, ".//nav[@id='toc']")
+  toc_title <- xml2::xml_find_first(page_toc, "h2")
+  xml2::xml_text(toc_title) <- "In this chapter"
+  source_title <- xml2::xml_find_first(page_toc, "//a[@id='book-edit']")
+  xml2::xml_text(source_title) <- "Edit this chapter"
+
   xml2::xml_add_sibling(
     xml2::xml_find_first(page, ".//main[@id='content']//h1"),
     page_toc,

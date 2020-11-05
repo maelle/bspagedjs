@@ -1,9 +1,10 @@
 bookdown::bs4_book:
   theme:
+    bootswatch: "litera"
     primary: "#982a31"
     fg: "#2b2121"
     bg: "#ffffff"
-  repo: https://github.com/hadley/r-pkgs
+  repo: https://github.com/maelle/bspagedjs
   css: style.css
   mathjax: NULL
   includes:
