@@ -2,6 +2,18 @@
 
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
 
+When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+
+::: {.alert .alert-dismissible .alert-warning}
+BAD IDEA!!
+:::
+
+```{r, out.width='10%'}
+plot(1:10)
+```
+
+
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
 ```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
@@ -10,6 +22,12 @@ plot(pressure, type = 'b', pch = 19)
 ```
 
 Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+
+## More!
+
+blabla 
+
+## Table
 
 ```{r nice-tab, tidy=FALSE}
 knitr::kable(

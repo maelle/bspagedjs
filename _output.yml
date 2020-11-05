@@ -4,3 +4,7 @@ bookdown::bs4_book:
     fg: "#2b2121"
     bg: "#ffffff"
   repo: https://github.com/hadley/r-pkgs
+  css: style.css
+  mathjax: NULL
+  includes:
+    in_header: mathjax.html

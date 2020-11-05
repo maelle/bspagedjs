@@ -38,4 +38,4 @@ jobs:
         run: npm install . -g
 
       - name: PDF
-        run: Rscript -e 'pagedjs-cli ./_book/index.html -o result.pdf'
+        run: Rscript -e 'source("build.R")'
