@@ -45,6 +45,8 @@ jobs:
 
       - name: Commit results
         run: |
+          git config --global user.email "maelle.salmon@yahoo.se"
+          git config --global user.name "Maëlle Salmon"
           cd docs
           git init
           git add .
