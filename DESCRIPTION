@@ -21,6 +21,7 @@ Suggests:
     fs
 Remotes: 
     rstudio/bookdown,
-    rstudio/bslib
+    rstudio/bslib,
+    r-lib/downlit
 URL: https://github.com/maelle/bspagedjs
 BugReports: https://github.com/maelle/bspagedjs/issues
