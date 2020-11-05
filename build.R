@@ -35,6 +35,8 @@ lapply(htmls, tweak_page)
 # Now we'll add the main content of all pages to index dot html
 page1 <- xml2::read_html("docs2/index.html")
 
+
+
 get_contents <- function(page_path, main = xml2::xml_find_first(page1, ".//main[@id='content']")) {
   page <- xml2::read_html(page_path)
   contents <-  xml2::xml_contents(xml2::xml_find_first(page, ".//main[@id='content']"))
@@ -53,6 +55,30 @@ ordered_htmls <- ordered_htmls[ordered_htmls!="index.html"]
 ordered_htmls <- file.path("docs2", ordered_htmls)
 
 lapply(ordered_htmls, get_contents)
+
+# fix toc links
+toc <- xml2::xml_find_first(page1, ".//nav")
+active <- xml2::xml_find_first(toc, ".//a[@class='active']")
+xml2::xml_attr(active, "class") <- ''
+toc_links <- xml2::xml_find_all(toc, ".//a[@class='']")
+xml2::xml_attr(toc_links, "href") <- paste0(
+  "#",
+  gsub(
+    "\\.html$",
+    "",
+    xml2::xml_attr(toc_links, "href")
+  )
+)
+
+for (i in rev(xml2::xml_contents(toc))) {
+
+  xml2::xml_add_sibling(
+    xml2::xml_child(xml2::xml_find_first(page1, ".//main[@id='content']")),
+    i,
+    .where = "before"
+  )
+}
+
 
 xml2::write_html(page1, "docs2/index.html")
 

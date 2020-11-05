@@ -1,5 +1,5 @@
 Package: bspagedjs
-Title: What the Package Does (One Line, Title Case)
+Title: bookdown::bs4_book() and pagedjs-cli fun
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Maëlle",
@@ -23,6 +23,7 @@ Remotes:
     rstudio/bookdown,
     rstudio/bslib,
     r-lib/downlit,
-    rstudio/htmltools
+    rstudio/htmltools,
+    yihui/xfun
 URL: https://github.com/maelle/bspagedjs
 BugReports: https://github.com/maelle/bspagedjs/issues
