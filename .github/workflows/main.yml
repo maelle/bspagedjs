@@ -25,7 +25,7 @@ jobs:
           key: ${{ hashFiles('DESCRIPTION') }}-2
 
       - name: Install dependencies
-        run: Rscript -e 'install.packages("remotes")' -e 'options(install.packages.check.source = "both")' -e 'remotes::install_deps(dependencies = TRUE)'
+        run: Rscript -e 'install.packages("remotes")' -e 'options(install.packages.check.source = "both")' -e 'remotes::install_deps(dependencies = TRUE)'  -e 'remotes::install_github("rstudio/bslib")'
 
       - name: Render book html
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
