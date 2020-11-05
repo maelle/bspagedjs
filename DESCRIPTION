@@ -14,8 +14,12 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9000
 Suggests: 
-    bookdown (>= 0.21.3)
+    bookdown (>= 0.21.3),
+    bslib,
+    downlit, 
+    xml2
 Remotes: 
     rstudio/bookdown
+    rstudio/bslib
 URL: https://github.com/maelle/bspagedjs
 BugReports: https://github.com/maelle/bspagedjs/issues
