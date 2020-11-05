@@ -49,4 +49,4 @@ lapply(ordered_htmls, get_contents)
 xml2::write_html(page1, "docs2/index.html")
 
 
-system("pagedjs-cli ./docs2/index.html -o docs/result.pdf")
+system("pagedjs-cli ./docs2/index.html -o docs/result.pdf -w 227 -h 291")

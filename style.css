@@ -3,11 +3,14 @@
     display: none;
 }
 
-.chapter-nav {
+.prev {
+  display: none;
+}
+.next {
   display: none;
 }
 
-footer {
+.bg-primary.text-light.mt-5 {
   display: none;
 }
 
@@ -35,7 +38,10 @@ main img {
   }
 }
 
-.section.level1 h1 {  string-set: title content(text) }
+.section.level1 h1 {
+   break-before: page;
+  string-set: title content(text)
+  }
 
 
 @page {
@@ -43,7 +49,10 @@ main img {
     content: string(title)
   }
 }
-
+@page {
+        size: 227mm 291mm;
+        margin: 10mm 15mm;
+    }
 .d-flex.align-items-start.justify-content-between h1 {
   display: none;
 }
