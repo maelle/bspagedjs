@@ -1,4 +1,4 @@
-bookdown::render_book(".")
+bookdown::render_book("index.Rmd")
 
 
 if (fs::dir_exists("docs2")) fs::dir_delete("docs2")
@@ -20,6 +20,10 @@ tweak_page <- function(page_path) {
     where = "after"
     )
   xml2::xml_remove(page_toc)
+
+  hrefs <- xml2::xml_find_all(page, ".//a")
+  xml2::xml_attr(hrefs, "href") <- gsub("^.*\\.html#", "#", xml2::xml_attr(hrefs, "href"))
+
   xml2::write_html(page, page_path)
 }
 
@@ -28,7 +32,7 @@ lapply(htmls, tweak_page)
 page1 <- xml2::read_html("docs2/index.html")
 
 get_contents <- function(page_path, main = xml2::xml_find_first(page1, ".//main[@id='content']")) {
-  page <- xml2::read_html(file.path("docs2", basename(page_path)))
+  page <- xml2::read_html(page_path)
   contents <-  xml2::xml_contents(xml2::xml_find_first(page, ".//main[@id='content']"))
 
   for (i in contents) {
