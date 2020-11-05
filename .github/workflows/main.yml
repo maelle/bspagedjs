@@ -40,3 +40,11 @@ jobs:
 
       - name: PDF
         run: Rscript -e 'source("build.R")'
+
+      - name: Commit results
+        run: |
+          cd docs
+          git init
+          git add .
+          git commit -m 'new book'
+          git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:gh-pages --force
