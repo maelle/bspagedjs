@@ -2,6 +2,10 @@
 
 You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
 
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
 When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
@@ -9,10 +13,7 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 BAD IDEA!!
 :::
 
-```{r, out.width='10%'}
-plot(1:10)
-```
-
+<span class="badge badge-info">Info</span>
 
 Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
 
