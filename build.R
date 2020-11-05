@@ -1,12 +1,14 @@
+# the nice HTML book
 bookdown::render_book("index.Rmd")
 
-
+# the place where we tweak, merge and print HTMLs
 if (fs::dir_exists("docs2")) fs::dir_delete("docs2")
 fs::dir_copy("docs", "docs2")
 
 htmls <- fs::dir_ls("docs2", glob = "*.html")
+
 tweak_page <- function(page_path) {
-  # put TOC at the begging
+  # put TOC at the beginning and fix text
   page <- xml2::read_html(page_path)
   page_toc <- xml2::xml_find_first(page, ".//nav[@id='toc']")
   toc_title <- xml2::xml_find_first(page_toc, "h2")
@@ -21,6 +23,7 @@ tweak_page <- function(page_path) {
     )
   xml2::xml_remove(page_toc)
 
+  # fix cross-refs
   hrefs <- xml2::xml_find_all(page, ".//a")
   xml2::xml_attr(hrefs, "href") <- gsub("^.*\\.html#", "#", xml2::xml_attr(hrefs, "href"))
 
@@ -29,6 +32,7 @@ tweak_page <- function(page_path) {
 
 lapply(htmls, tweak_page)
 
+# Now we'll add the main content of all pages to index dot html
 page1 <- xml2::read_html("docs2/index.html")
 
 get_contents <- function(page_path, main = xml2::xml_find_first(page1, ".//main[@id='content']")) {
@@ -40,6 +44,7 @@ get_contents <- function(page_path, main = xml2::xml_find_first(page1, ".//main[
   }
 }
 
+# Important to get HTMLs in the right order, thanks book TOC
 ordered_htmls <- xml2::xml_attr(
   xml2::xml_find_all(page1, ".//ul[contains(@class, 'book-toc')]//li//a"),
   "href"
@@ -49,8 +54,7 @@ ordered_htmls <- file.path("docs2", ordered_htmls)
 
 lapply(ordered_htmls, get_contents)
 
-
 xml2::write_html(page1, "docs2/index.html")
 
-
+# Print!
 system("pagedjs-cli ./docs2/index.html -o docs/result.pdf -w 227 -h 291")

@@ -3,12 +3,14 @@ This is a minimal example of a book based on R Markdown and **bookdown** (https:
 This uses the `bs4_book()` template for HTML and then for getting a PDF
 
 * tweaks of the HTML and merging of all chapters
-* some print CSS
+* some print CSS, see [stylesheet](style.css)
 * pagedjs-cli.
+
+See [build.R](build.R)
 
 Why use this and not LaTeX?
 
-* procrastination?
+* procrastination? :see_no_evil:
 * not having to redefine colors, environments for the LaTeX output
 * not having to knit the same Rmd's twice for the two outputs (which also excludes using pagedown).
 
