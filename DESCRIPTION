@@ -17,7 +17,8 @@ Suggests:
     bookdown (>= 0.21.3),
     bslib,
     downlit, 
-    xml2
+    xml2,
+    fs
 Remotes: 
     rstudio/bookdown,
     rstudio/bslib
