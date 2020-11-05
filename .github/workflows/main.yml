@@ -10,7 +10,7 @@ name: book-workflow
 jobs:
   bookdown:
     name: Render Book
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -36,7 +36,9 @@ jobs:
       - uses: actions/setup-node@v1
 
       - name: Install paged-js
-        run: npm install . -g
+        run: |
+          npm install . -g
+          npm install -g pagedjs-cli pagedjs --unsafe-perm=true
 
       - name: PDF
         run: Rscript -e 'source("build.R")'
