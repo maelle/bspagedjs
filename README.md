@@ -10,4 +10,8 @@ Why use this and not LaTeX?
 
 * procrastination?
 * not having to redefine colors, environments for the LaTeX output
-* not having to knit the same Rmd's twice for the two outputs.
+* not having to knit the same Rmd's twice for the two outputs (which also excludes using pagedown).
+
+Why not pagedown?
+
+* I want a non paginated HTML in the browser, and I want the PDF to be pre-generated.

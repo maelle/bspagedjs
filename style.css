@@ -2,4 +2,34 @@
   .btn.btn-outline-primary.d-lg-none.ml-2.mt-1 {
     display: none;
 }
+
+main img {
+  max-width: 100%;
+  max-height: calc(0.5 * (var(--pagedjs-width) - var(--pagedjs-margin-left) - var(--pagedjs-margin-right)));
+  width: auto;
+}
+
+@page {
+  @bottom-left {
+        content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+.section.level1 h1 {  string-set: title content(text) }
+
+
+@page {
+  @bottom-right {
+    content: string(title)
+  }
+}
+
+.d-flex.align-items-start.justify-content-between h1 {
+  display: none;
+}
+
+.footer {
+  display: none;
+}
+
 }
