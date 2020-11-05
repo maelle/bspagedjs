@@ -17,3 +17,28 @@ Why use this and not LaTeX?
 Why not pagedown?
 
 * I want a non paginated HTML in the browser, and I want the PDF to be pre-generated.
+
+
+## What's needed?
+
+* dev bookdown and co to use `bs4_book()`
+* a stylesheet with print CSS
+* mathjax without loading messages see [mathjax.html](mathjax.html) (or no mathjax if your book does not feature equations)
+
+So in `_output.yml` e.g.
+
+```yaml
+bookdown::bs4_book:
+  theme:
+    bootswatch: "litera"
+    primary: "#982a31"
+    fg: "#2b2121"
+    bg: "#ffffff"
+  repo: https://github.com/maelle/bspagedjs
+  css: style.css
+  mathjax: NULL
+  includes:
+    in_header: mathjax.html
+```
+
+* pagedjs-cli (locally, or using GitHub Actions)
