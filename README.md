@@ -2,6 +2,14 @@
 
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown).
 
+## Result
+
+* [HTML](https://maelle.github.io/bspagedjs/index.html)
+* [PDF](https://maelle.github.io/bspagedjs/result.pdf)
+
+
+## Context
+
 This uses the `bs4_book()` template for HTML and then for getting a PDF
 
 * tweaks of the HTML and merging of all chapters
