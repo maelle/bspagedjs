@@ -19,7 +19,7 @@ Suggests:
     downlit, 
     xml2
 Remotes: 
-    rstudio/bookdown
+    rstudio/bookdown,
     rstudio/bslib
 URL: https://github.com/maelle/bspagedjs
 BugReports: https://github.com/maelle/bspagedjs/issues
