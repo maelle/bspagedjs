@@ -1,3 +1,5 @@
+# Book PDF without LaTeX? :sunglasses:
+
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown).
 
 This uses the `bs4_book()` template for HTML and then for getting a PDF
